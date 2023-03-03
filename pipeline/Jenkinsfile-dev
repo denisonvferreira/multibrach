@@ -3,9 +3,8 @@ pipeline {
 
     stages {
         stage('Example') {
-			      when {
+	    when {
                 expression{ return (env.BRANCH_NAME == "dev")}
-            }
             }
             steps {
                 sh '''
