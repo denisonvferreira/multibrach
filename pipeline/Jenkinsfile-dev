@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Example') {
+			      when {
+                expression{ return (env.BRANCH_NAME == "dev")}
+            }
+            }
+            steps {
+                sh '''
+                echo testando_banch-dev
+                '''
+            }
+        }
+    }
+}
