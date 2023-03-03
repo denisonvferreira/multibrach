@@ -5,9 +5,10 @@ pipeline {
         stage('Example') {
             steps {
                 sh '''
-                echo testando_banch-dev
+                echo env.BRANCH_NAME
                 '''
             }
         }
     }
 }
+	    
