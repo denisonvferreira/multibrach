@@ -5,7 +5,7 @@ pipeline {
         stage('Example') {
             steps {
                 sh '''
-                echo env.BRANCH_NAME
+                echo $(env.BRANCH_NAME)
                 '''
             }
         }
