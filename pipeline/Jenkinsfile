@@ -22,7 +22,8 @@ pipeline {
                     }
                     steps {
                         echo "lendo branch hml e branch dev"
-                    }            
+                    }
+               }
         }
     }
 }
