@@ -22,7 +22,7 @@ pipeline {
                     }
                }
                steps {
-                    echo "lendo branch hml e branch dev"
+                    echo "lendo branch  ${env.BRANCH_NAME}"
                }
         }
     }
