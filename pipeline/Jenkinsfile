@@ -16,10 +16,12 @@ pipeline {
 //                 }
 //             }
                when {
-                    expression { env.BRANCH_NAME != 'hml'}
+                    anyOf { 
+                        branch 'hml'
+                        branch 'dev'
                     }
                     steps {
-                        echo "Run this stage - ony if the branch is not main"
+                        echo "lendo branch hml e branch dev"
                     }            
         }
     }
