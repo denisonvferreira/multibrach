@@ -13,6 +13,12 @@ pipeline {
                     }else{
                         sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
                     }
+                    when {
+                        expression { env.BRANCH_NAME = 'main'}
+                    }
+                    steps {
+                        echo "Run this stage - ony if the branch is not main"
+                    }
                     }
             }
         }
