@@ -2,19 +2,6 @@ pipeline {
     agent any
     stages {
         stage('Hello') {
-//             steps {
-//                 script {
-//                     if (env.BRANCH_NAME == 'hml') {
-//                         echo '======================='
-//                         echo 'O props do Hml será carregado.'
-//                     }  else if (env.BRANCH_NAME == 'dev') {
-//                         echo '======================='
-//                         echo 'O props do Dev será carregado.'
-//                     }else{
-//                         sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
-//                     }
-//                 }
-//             }
                when {
                     anyOf { 
                         branch 'main.*'
