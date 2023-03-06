@@ -7,9 +7,9 @@ pipeline {
                 sh '''
                 git rev-parse --abbrev-ref HEAD > GIT_BRANCH
                 git_branch = readFile('GIT_BRANCH').trim()
-                echo git_branch
+                echo $(git_branch)
                 echo ˜================================˜
-                echo ˜$(env.BRANCH_NAME)˜
+                echo ˜$(env.GIT_BRANCH)˜
                 echo ˜Teste leitura da variavel˜
                 '''
             }
