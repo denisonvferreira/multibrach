@@ -17,8 +17,8 @@ pipeline {
 //             }
                when {
                     anyOf { 
-                        branch 'main'
-                        branch 'dev'
+                        branch 'main.*'
+                        branch 'dev.*'
                     }
                }
                steps {
