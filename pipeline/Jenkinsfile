@@ -20,9 +20,9 @@ pipeline {
                         branch 'hml'
                         branch 'dev'
                     }
-                    steps {
-                        echo "lendo branch hml e branch dev"
-                    }
+               }
+               steps {
+                    echo "lendo branch hml e branch dev"
                }
         }
     }
