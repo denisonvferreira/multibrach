@@ -4,19 +4,30 @@ pipeline {
         stage('Hello') {
                when {
                     anyOf { 
-                        branch 'main*'
                         branch 'dev*'
-                        branch 'rel/*'
                     }
                }
-            steps {
-                echo "lendo branch  ${env.BRANCH_NAME}"
-                script {
-                    sh '''
-                     echo "Subindo imagem release na conta DEV"
-                    '''
+                steps {
+                    echo "lendo branch  ${env.BRANCH_NAME}"
+                    script {
+                        sh '''
+                         echo "Subindo imagem release na conta DEV"
+                        '''
+                    }
                 }
-            }
+               when {
+                    anyOf { 
+                        branch 'main*'
+                    }
+               }
+               steps {
+                    echo "lendo branch  ${env.BRANCH_NAME}"
+                    script {
+                        sh '''
+                         echo "Subindo imagem release na conta main"
+                        '''
+                    }
+               }            
         }
     }
 }
