@@ -6,7 +6,7 @@ pipeline {
                     anyOf { 
                         branch 'main*'
                         branch 'dev*'
-                        branch 'rel.*'
+                        branch 'rel/*'
                     }
                }
                steps {
