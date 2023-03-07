@@ -9,11 +9,8 @@ pipeline {
                         branch 'rel/*'
                     }
                }
-               steps {
-                   script {
-                    sh '''
-                    echo "lendo branch  ${env.BRANCH_NAME}"
-                    '''
+            steps {
+                echo "lendo branch  ${env.BRANCH_NAME}
                    }
                }
         }
