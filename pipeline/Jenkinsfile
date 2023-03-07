@@ -11,6 +11,11 @@ pipeline {
                }
             steps {
                 echo "lendo branch  ${env.BRANCH_NAME}"
+                script {
+                    sh '''
+                     echo "Subindo imagem release na conta DEV 
+                    '''
+                }
             }
         }
     }
