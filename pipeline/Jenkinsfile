@@ -10,7 +10,7 @@ pipeline {
                     }
                }
             steps {
-                echo "lendo branch  ${env.BRANCH_NAME}
+                echo "lendo branch  ${env.BRANCH_NAME}"
                    }
                }
         }
