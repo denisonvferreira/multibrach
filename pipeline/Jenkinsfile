@@ -10,12 +10,13 @@ pipeline {
                }
             steps {
 		    script{
-	    	    	def jobName = "teste-nome"+"_"+new Date()
+	    	    	def jobName = new Date()
 				jobName = jobName.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
 		        	currentBuild.displayName = "$jobName"
-		        	node {
-			        	echo "job name $jobName"
-		        	}
+		        	jobName = "teste-nome"+"_"+jobName
+				node {
+					echo "job name $jobName"
+				}
 		    }
 	    }
     
