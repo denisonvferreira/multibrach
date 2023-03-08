@@ -8,9 +8,12 @@ pipeline {
                         branch 'dev*'
                     }
                }
-               steps {
-                    echo "lendo branch  ${env.BRANCH_NAME}"
-               }
+            steps {
+	    	    def jobName = env.JOB_NAME+"_"+new Date()
+		        currentBuild.displayName = "$jobName"
+		        node {
+			        echo "job name $jobName"
+		        }
         }
     }
 }
