@@ -11,7 +11,7 @@ pipeline {
             steps {
 		    script{
 	    	    	def jobName = new Date()
-				jobName = jobName.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
+				jobName = jobName.format("yyyyMMddHHmmss", TimeZone.getTimeZone('UTC'))
 		        	currentBuild.displayName = "$jobName"
 		        	jobName = "teste-nome"+"_"+jobName
 				node {
