@@ -9,7 +9,7 @@ pipeline {
                     }
                }
             steps {
-	    	    def jobName = env.JOB_NAME+"_"+new Date()
+	    	    def jobName = "teste-nome"+"_"+new Date()
 		        currentBuild.displayName = "$jobName"
 		        node {
 			        echo "job name $jobName"
