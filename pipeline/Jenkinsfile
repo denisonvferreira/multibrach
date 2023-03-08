@@ -17,6 +17,9 @@ pipeline {
 				node {
 					echo "job name $jobName"
 				}
+			sh '''
+			echo $jobName
+			'''			
 		    }
 	    }
     
