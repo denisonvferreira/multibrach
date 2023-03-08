@@ -4,6 +4,11 @@ pipeline {
     stages {
         stage('Example') {
             steps {
+	    	def jobName = env.JOB_NAME+"_"+new Date()
+		currentBuild.displayName = "$jobName"
+		node {
+			echo "job name $jobName"
+		}
                 sh '''
                 echo env.BRANCH_NAME
                 '''
