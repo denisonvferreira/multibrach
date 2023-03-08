@@ -9,12 +9,13 @@ pipeline {
                     }
                }
             steps {
-	    	    def jobName = "teste-nome"+"_"+new Date()
-		        currentBuild.displayName = "$jobName"
-		        node {
-			        echo "job name $jobName"
-		        }
-        
+		    script{
+	    	    	def jobName = "teste-nome"+"_"+new Date()
+		        	currentBuild.displayName = "$jobName"
+		        	node {
+			        	echo "job name $jobName"
+		        	}
+		    }
 	    }
     
 	}
