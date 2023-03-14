@@ -7,12 +7,12 @@
   "ECS_TASK_DEFINITION_NAME": "tsk-bnex-file-import-hml",
   "ECS_CLUSTER": "dev-bnex-crm",
   "ECS_SERVICE_NAME": "svr-bnex-file-import-hml",
-  "VERSION-PRD": "1.0.0",
-  "AWS_ACCOUNT_ID-PRD": "2180000000000",
-  "AWS_DEFAULT_REGION-PRD": "us-east-100",
-  "IMAGE_NAME-PRD": "bnex-file-import-hml",
-  "CREDENTIAL-PRD": "DEV_AWS_BNEX_PASS",
-  "ECS_TASK_DEFINITION_NAME-PRD": "tsk-bnex-file-import-hml",
+  "VERSION-PRD": "1.0.10",
+  "AWS_ACCOUNT_ID-PRD": "2180000000010",
+  "AWS_DEFAULT_REGION-PRD": "us-east-10010",
+  "IMAGE_NAME-PRD": "bnex-file-import-PRD",
+  "CREDENTIAL-PRD": "DEV_AWS_BNEX_PASS-PRD",
+  "ECS_TASK_DEFINITION_NAME-PRD": "tsk-bnex-file-import-prd",
   "ECS_CLUSTER-PRD": "dev-bnex-crm",
-  "ECS_SERVICE_NAME-PRD": "svr-bnex-file-import-hml"
+  "ECS_SERVICE_NAME-PRD": "svr-bnex-file-import-prd"
 }
