@@ -75,8 +75,8 @@ pipeline {
 					    ls
 					    echo ${IMAGE_NAME}
 					    echo ${IMAGE_NAME-PRD}
-//  					    echo properties.IMAGE_NAME
-//  					    echo properties.IMAGE_NAME-PRD
+//  					    echo props.IMAGE_NAME
+//  					    echo props.IMAGE_NAMEPRD
 					    '''
 				    }
 			    } 
@@ -113,8 +113,8 @@ pipeline {
 //     }
 options {
 	environment {
-		IMAGE_NAME = "${properties.IMAGE_NAME}"
-		IMAGE_NAMEPRD = "${properties.IMAGE_NAMEPRD}"
+		IMAGE_NAME = "${props.IMAGE_NAME}"
+		IMAGE_NAMEPRD = "${props.IMAGE_NAMEPRD}"
 	}
 
 }
