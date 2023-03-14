@@ -13,7 +13,7 @@ pipeline {
 			    mail to:"denison.ferreira@hotmail.com.br",
 				subject: "Test Email",
 				body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
-			    input message: 'Deseja buildar nova imagem?
+			    input message: 'Deseja buildar nova imagem?'
 			    
 // 	    	    	def jobName = new Date()
 // 				jobName = jobName.format("yyyyMMddHHmmss", TimeZone.getTimeZone('UTC'))
