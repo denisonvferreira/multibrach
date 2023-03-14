@@ -73,8 +73,6 @@ pipeline {
 					    sh '''
 					    pwd
  					    ls
-// 					    echo ${IMAGE_NAME}
-//  					    echo ${IMAGE_NAME-PRD}
   					    echo ${props['IMAGE_NAME']}
   					    echo ${props['IMAGE_NAMEPRD']}
 					    '''
