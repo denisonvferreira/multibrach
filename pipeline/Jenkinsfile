@@ -111,7 +111,7 @@ pipeline {
 options {
 	environment {
 		IMAGE_NAME = "${properties.IMAGE_NAME}"
-		IMAGE_NAME-PRD = "${properties.IMAGE_NAME-PRD}"
+		IMAGE_NAME-PRD = "${properties.IMAGE_NAMEPRD}"
 	}
 
 }
