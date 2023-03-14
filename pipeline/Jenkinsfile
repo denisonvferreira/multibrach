@@ -1,6 +1,24 @@
 pipeline {
     agent any
     stages {
+	stage('Loading ENVs - HML'){
+		when {
+			anyof {
+				branch 'main'
+			}
+		}
+		steps {
+			script{
+				def props = readJson file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
+				assert props['key'] == null
+				props.each { key, value ->
+					env."${key}" = "${value}"
+				}
+			}
+		}
+			
+	}
+		
         stage('Hello') {
                when {
                     anyOf { 
