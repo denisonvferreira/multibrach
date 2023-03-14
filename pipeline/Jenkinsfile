@@ -18,6 +18,12 @@ pipeline {
 				 id: 'Proceed1', message: 'Confirma a RC?', parameters: [
 				 [$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Confirma o deploy?']
 				 ])
+				    if (userInput == true){
+					    echo "tageando imagem buildada"
+					    echo "Buildando imagem nova"
+				    } else {
+					    echo "apagando imagem buildada"
+				    }
 			    } 
 			    
 // 	    	    	def jobName = new Date()
