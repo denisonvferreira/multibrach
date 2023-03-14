@@ -18,7 +18,7 @@ pipeline {
 					echo "job name $jobName"
 				}
 			sh'''
-			echo $jobName
+			echo teste $jobName
 			'''			
 		    }
 	    }
@@ -26,11 +26,19 @@ pipeline {
 	}
 
     }
+//     post{
+//     	always{
+// 		mail to:"denison.ferreira@hotmail.com.br",
+// 		subject: "Test Email",
+// 		body: "Test"
+// 	}
+//     }
     post{
-    	always{
+    	failure{
 		mail to:"denison.ferreira@hotmail.com.br",
 		subject: "Test Email",
 		body: "Test"
 	}
     }
+
 }
