@@ -30,7 +30,7 @@ pipeline {
     	always{
 		mail to:"denison.ferreira@hotmail.com.br",
 		subjective: "Test Email",
-		body: "Test
+		body: "Test"
 	}
     }
 }
