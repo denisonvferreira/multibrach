@@ -6,5 +6,5 @@
   "CREDENTIAL": "DEV_AWS_BNEX_PASS",
   "ECS_TASK_DEFINITION_NAME": "tsk-bnex-file-import-hml",
   "ECS_CLUSTER": "dev-bnex-crm",
-  "ECS_SERVICE_NAME": "svr-bnex-file-import-hml
+  "ECS_SERVICE_NAME": "svr-bnex-file-import-hml"
 }
