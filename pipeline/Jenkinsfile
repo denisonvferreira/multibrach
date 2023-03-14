@@ -10,9 +10,9 @@ pipeline {
                }
             steps {
 		    script{
-			mail to:("denison.ferreira@hotmail.com.br",
+			mail to:"denison.ferreira@hotmail.com.br",
 				subject: "Test Email",
-				body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"); 
+				body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}" 
 			    
 // 	    	    	def jobName = new Date()
 // 				jobName = jobName.format("yyyyMMddHHmmss", TimeZone.getTimeZone('UTC'))
