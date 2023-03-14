@@ -14,10 +14,14 @@ pipeline {
 				subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) sucess.",
 				body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
 			    timeout(time: 30, unit: 'MINUTES') {
-				 userInput = input(
-				 id: 'Proceed1', message: 'Confirma a RC?', parameters: [
-				 [$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Confirma o deploy?']
-				 ])
+				    try{
+					 userInput = input(
+					 id: 'Proceed1', message: 'Confirma a RC?', parameters: [
+					 [$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Confirma o deploy?']
+					 ])
+				    } catch(err) {
+					    userInput = false
+				    }
 				    if (userInput == true){
 					    echo "tageando imagem buildada"
 					    echo "Buildando imagem nova"
