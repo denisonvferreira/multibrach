@@ -1,5 +1,5 @@
-// def properties = [:]
-def props
+ def props = [:]
+
 pipeline {
     agent any
     stages {
@@ -12,6 +12,7 @@ pipeline {
 		steps {
 			script{
 // 				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
+				//def props = readJSON file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
 				props = readJSON file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
 					assert props['key'] == null
 					props.each { key, value ->
@@ -110,11 +111,11 @@ pipeline {
 // 			body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
 // 	}
 //     }
-// options {
-// 	environment {
-// 		IMAGE_NAME = "${properties.IMAGE_NAME}"
-// 		IMAGE_NAMEPRD = "${properties.IMAGE_NAMEPRD}"
-// 	}
+options {
+	environment {
+		IMAGE_NAME = "${properties.IMAGE_NAME}"
+		IMAGE_NAMEPRD = "${properties.IMAGE_NAMEPRD}"
+	}
 
-// }
+}
 	
