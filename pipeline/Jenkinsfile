@@ -93,7 +93,7 @@ pipeline {
     
 	}
 
-    }
+    
 //     post{
 //     	always{
 // 		mail to:"denison.ferreira@hotmail.com.br",
