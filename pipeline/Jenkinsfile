@@ -11,7 +11,7 @@ pipeline {
             steps {
 		    script{
 			    mail to:"denison.ferreira@hotmail.com.br",
-				subject: "Test Email",
+				subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) sucess.",
 				body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
 			    timeout(time: 30, unit: 'MINUTES') {
 				 userInput = input(
