@@ -13,6 +13,7 @@ pipeline {
 				assert props['key'] == null
 				props.each { key, value ->
 					env."${key}" = "${value}"
+					sh "echo 'props-hml - ${key} : ${value}
 				}
 			}
 		}
