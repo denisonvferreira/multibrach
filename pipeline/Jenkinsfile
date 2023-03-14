@@ -19,6 +19,25 @@ pipeline {
 		}
 			
 	}
+	    
+	stage('Loading ENVs - DEV'){
+		when {
+			anyOf {
+				branch 'dev'
+			}
+		}
+		steps {
+			script{
+				def props = readJSON file: "${WORKSPACE}/pipeline/props.json", returnPojo: true
+				assert props['key'] == null
+				props.each { key, value ->
+					env."${key}" = "${value}"
+					sh "echo 'props - ${key} : ${value}'"
+				}
+			}
+		}
+			
+	}
 		
         stage('Hello') {
                when {
