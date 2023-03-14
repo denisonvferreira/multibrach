@@ -27,6 +27,9 @@ pipeline {
 					    echo "Buildando imagem nova"
 				    } else {
 					    echo "apagando imagem buildada"
+					    sh ''''
+					    docker ps
+					    '''
 				    }
 			    } 
 			    
