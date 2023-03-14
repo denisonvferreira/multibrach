@@ -111,5 +111,7 @@ pipeline {
 options {
 	environment {
 		PROPS = "${props.IMAGE_NAME-PRD}"
+	}
 
 }
+	
