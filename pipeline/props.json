@@ -1,0 +1,10 @@
+{
+ "VERSION": "1.0.1",
+ "AWS_ACCOUNT_ID": "2180000000001",
+ "AWS_DEFAULT_REGION": "us-east-101",
+ "IMAGE_NAME": "bnex-file-import-dev",
+  "CREDENTIAL": "DEV_AWS_BNEX_PASS",
+  "ECS_TASK_DEFINITION_NAME": "tsk-bnex-file-import-dev",
+  "ECS_CLUSTER": "dev-bnex-crm",
+  "ECS_SERVICE_NAME": "svr-bnex-file-import-dev"
+}
