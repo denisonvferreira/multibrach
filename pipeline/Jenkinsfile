@@ -30,11 +30,11 @@ pipeline {
 		}
 		steps {
 			script{
-				def props = readJSON file: "${WORKSPACE}/pipeline/props.json", returnPojo: true
-				assert props['key'] == null
-				props.each { key, value ->
-					env."${key}" = "${value}"
-					sh "echo 'props - ${key} : ${value}'"
+// 				def props = readJSON file: "${WORKSPACE}/pipeline/props.json", returnPojo: true
+// 				assert props['key'] == null
+// 				props.each { key, value ->
+// 					env."${key}" = "${value}"
+// 					sh "echo 'props - ${key} : ${value}'"
 				}
 			}
 		}
