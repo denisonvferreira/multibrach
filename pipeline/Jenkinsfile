@@ -1,5 +1,5 @@
 // def properties = [:]
-def props == null
+def props
 pipeline {
     agent any
     stages {
