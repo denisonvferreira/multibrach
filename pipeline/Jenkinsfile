@@ -10,7 +10,7 @@ pipeline {
 		}
 		steps {
 			script{
-				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json'
+				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
 // 				def props = readJSON file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
 // 					assert props['key'] == null
 // 					props.each { key, value ->
