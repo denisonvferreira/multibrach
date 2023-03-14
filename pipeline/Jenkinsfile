@@ -74,7 +74,7 @@ pipeline {
 					    pwd
  					    ls
 					    '''
-					    sh "echo ${props['IMAGE_NAME']}
+					    sh "echo ${props['IMAGE_NAME']}"
   					    sh "echo ${props['IMAGE_NAMEPRD']}"
 				    }
 			    } 
