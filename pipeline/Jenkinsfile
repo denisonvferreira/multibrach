@@ -1,4 +1,5 @@
-def properties = [:]
+// def properties = [:]
+assert props['key'] == null
 pipeline {
     agent any
     stages {
@@ -10,13 +11,13 @@ pipeline {
 		}
 		steps {
 			script{
-				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
-// 				def props = readJSON file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
-// 					assert props['key'] == null
-// 					props.each { key, value ->
-// 						env."${key}" = "${value}"
-// 						sh "echo 'props-hml - ${key} : ${value}'"
-				//}
+// 				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
+				props = readJSON file: "${WORKSPACE}/pipeline/props-hml.json", returnPojo: true
+					assert props['key'] == null
+					props.each { key, value ->
+						env."${key}" = "${value}"
+						sh "echo 'props-hml - ${key} : ${value}'"
+				}
 			}
 		}
 			
@@ -30,13 +31,13 @@ pipeline {
 		}
 		steps {
 			script{
-				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
-// 				def props = readJSON file: "${WORKSPACE}/pipeline/props.json", returnPojo: true
-// 				assert props['key'] == null
-// 				props.each { key, value ->
-// 					env."${key}" = "${value}"
-// 					sh "echo 'props - ${key} : ${value}'"
-				//}
+// 				properties = readJSON file: '${WORKSPACE}/pipeline/props-hml.json', returnPojo: true
+				def props = readJSON file: "${WORKSPACE}/pipeline/props.json", returnPojo: true
+				assert props['key'] == null
+				props.each { key, value ->
+					env."${key}" = "${value}"
+					sh "echo 'props - ${key} : ${value}'"
+				}
 			}
 		}
 			
@@ -73,8 +74,8 @@ pipeline {
 					    ls
 					    echo ${IMAGE_NAME}
 					    echo ${IMAGE_NAME-PRD}
-					    echo properties.IMAGE_NAME
-					    echo properties.IMAGE_NAME-PRD
+//  					    echo properties.IMAGE_NAME
+//  					    echo properties.IMAGE_NAME-PRD
 					    '''
 				    }
 			    } 
@@ -109,11 +110,11 @@ pipeline {
 // 			body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
 // 	}
 //     }
-options {
-	environment {
-		IMAGE_NAME = "${properties.IMAGE_NAME}"
-		IMAGE_NAMEPRD = "${properties.IMAGE_NAMEPRD}"
-	}
+// options {
+// 	environment {
+// 		IMAGE_NAME = "${properties.IMAGE_NAME}"
+// 		IMAGE_NAMEPRD = "${properties.IMAGE_NAMEPRD}"
+// 	}
 
-}
+// }
 	
