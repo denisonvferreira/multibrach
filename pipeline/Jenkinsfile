@@ -68,6 +68,8 @@ pipeline {
 					    sh '''
 					    pwd
 					    ls
+					    echo ${IMAGE_NAME}
+					    echo ${IMAGE_NAME-PRD}
 					    '''
 				    }
 			    } 
@@ -81,8 +83,6 @@ pipeline {
 // 				}
 			sh'''
 			echo $jobName
-			echo ${IMAGE_NAME}
-			echo ${IMAGE_NAME-PRD}
 			'''			
 		    }
 	    }
