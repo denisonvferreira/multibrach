@@ -1,5 +1,5 @@
 // def properties = [:]
-// assert props['key'] == null
+def props == null
 pipeline {
     agent any
     stages {
