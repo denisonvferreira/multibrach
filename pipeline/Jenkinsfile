@@ -85,10 +85,7 @@ pipeline {
 // 		        	jobName = "teste-nome"+"_"+jobName
 // 				node {
 // 					echo "job name $jobName"
-// 				}
-			sh'''
-			echo $jobName
-			'''			
+// 				}			
 		    }
 	    }
     
